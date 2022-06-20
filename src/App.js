@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import SearchIcon from './search.svg';
+import SearchIcon from './images/search.png'
 import TeamCard from './TeamCard';
 
 const API_URL = 'https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?s=Soccer&c=United_States';
