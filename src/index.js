@@ -4,19 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-import BrowserRouter from 'react-router-dom/BrowserRouter'
-
-ReactDOM.render((
-   <BrowserRouter basename={process.env.PUBLIC_URL}>
-     <App />
-   </BrowserRouter>
-));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 reportWebVitals();
