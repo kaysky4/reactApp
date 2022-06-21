@@ -276,7 +276,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Major League Soccer Teams</h1>
+      <h1>MLS Teams</h1>
 
       <div className='search'>
         <input 
