@@ -186,131 +186,130 @@ const team4 = {
   "strYoutube": "youtube.com/channel/UCx4A5iThing38J7V05aLL2g",
   "strLocked": "unlocked"}
 
-class App extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
+// class App extends React.Component {
+//   // eslint-disable-next-line no-useless-constructor
+//   constructor(props) {
+//     super(props);
   
-  }
-
-  componentDidMount() {
-    let path = localStorage.getItem('path');
-    if(path) {
-      localStorage.removeItem('path');
-      this.router.navigate([path]);
-    }
-  }
-
-  render() {
-    return (
-      function Form() {
-        const [teams, setTeams] = useState([]);
-        const [searchTerm, setSearchTerm] = useState('');
-    
-        const searchTeams = async (strTeam) => {
-          const respone = await fetch(`${API_URL}&s=${strTeam}`);
-          const data = await respone.json();
-    
-          setTeams(data.Search);
-          console.log(data.Search);
-        }
-    
-        useEffect(() => {
-          searchTeams('Austin');
-        },[]);
-      
-
-    <div className="app">
-    <h1>Major League Soccer Teams</h1>
-
-    <div className='search'>
-      <input 
-        placeholder='Search for teams'
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)} />
-      <img 
-      src={SearchIcon}
-      alt="search"
-      onClick={() => searchTeams(searchTerm)}/>
-    </div>
-
-    <div className='container'>
-      <TeamCard team1={team1}/>
-      <TeamCard team1={team2}/>
-      <TeamCard team1={team4}/>
-      <TeamCard team1={team3}/>
-    </div>
-    {/* {teams?.length > 0 
-      ? (
-        <div className='container'>
-          {teams.map((team) => (
-            <TeamCard team={team1}/>
-          ))}
-        </div>
-      ) : (
-        <div className='empty'>
-          <h2>No teams found</h2>
-        </div>
-      )
-    } */}
-    </div>}
-   );
-  }
-}
-export default App;
-    
-
-// const App = () => {
-//   const [teams, setTeams] = useState([]);
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const searchTeams = async (strTeam) => {
-//     const respone = await fetch(`${API_URL}&s=${strTeam}`);
-//     const data = await respone.json();
-
-//     setTeams(data.Search);
-//     console.log(data.Search);
 //   }
 
-//   useEffect(() => {
-//     searchTeams('Austin');
-//   },[]);
+//   componentDidMount() {
+//     let path = localStorage.getItem('path');
+//     if(path) {
+//       localStorage.removeItem('path');
+//       this.router.navigate([path]);
+//     }
+//   }
 
-  //return (
-  //   <div className="app">
-  //     <h1>Major League Soccer Teams</h1>
+//   render() {
+//     return (
+//       function Form() {
+//         const [teams, setTeams] = useState([]);
+//         const [searchTerm, setSearchTerm] = useState('');
+    
+//         const searchTeams = async (strTeam) => {
+//           const respone = await fetch(`${API_URL}&s=${strTeam}`);
+//           const data = await respone.json();
+    
+//           setTeams(data.Search);
+//           console.log(data.Search);
+//         }
+    
+//         useEffect(() => {
+//           searchTeams('Austin');
+//         },[]);
+      
 
-  //     <div className='search'>
-  //       <input 
-  //         placeholder='Search for teams'
-  //         value={searchTerm}
-  //         onChange={(e) => setSearchTerm(e.target.value)} />
-  //       <img 
-  //       src={SearchIcon}
-  //       alt="search"
-  //       onClick={() => searchTeams(searchTerm)}/>
-  //     </div>
+//     <div className="app">
+//     <h1>Major League Soccer Teams</h1>
 
-  //     <div className='container'>
-  //       <TeamCard team1={team1}/>
-  //       <TeamCard team1={team2}/>
-  //       <TeamCard team1={team4}/>
-  //       <TeamCard team1={team3}/>
-  //     </div>
-  //     {/* {teams?.length > 0 
-  //       ? (
-  //         <div className='container'>
-  //           {teams.map((team) => (
-  //             <TeamCard team={team1}/>
-  //           ))}
-  //         </div>
-  //       ) : (
-  //         <div className='empty'>
-  //           <h2>No teams found</h2>
-  //         </div>
-  //       )
-  //     } */}
-  //   </div>
-  // );
-//}
+//     <div className='search'>
+//       <input 
+//         placeholder='Search for teams'
+//         value={searchTerm}
+//         onChange={(e) => setSearchTerm(e.target.value)} />
+//       <img 
+//       src={SearchIcon}
+//       alt="search"
+//       onClick={() => searchTeams(searchTerm)}/>
+//     </div>
 
+//     <div className='container'>
+//       <TeamCard team1={team1}/>
+//       <TeamCard team1={team2}/>
+//       <TeamCard team1={team4}/>
+//       <TeamCard team1={team3}/>
+//     </div>
+//     {/* {teams?.length > 0 
+//       ? (
+//         <div className='container'>
+//           {teams.map((team) => (
+//             <TeamCard team={team1}/>
+//           ))}
+//         </div>
+//       ) : (
+//         <div className='empty'>
+//           <h2>No teams found</h2>
+//         </div>
+//       )
+//     } */}
+//     </div>}
+//    );
+//   }
+// }    
+
+const App = () => {
+  const [teams, setTeams] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const searchTeams = async (strTeam) => {
+    const respone = await fetch(`${API_URL}&s=${strTeam}`);
+    const data = await respone.json();
+
+    setTeams(data.Search);
+    console.log(data.Search);
+  }
+
+  useEffect(() => {
+    searchTeams('Austin');
+  },[]);
+
+  return (
+    <div className="app">
+      <h1>Major League Soccer Teams</h1>
+
+      <div className='search'>
+        <input 
+          placeholder='Search for teams'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} />
+        <img 
+        src={SearchIcon}
+        alt="search"
+        onClick={() => searchTeams(searchTerm)}/>
+      </div>
+
+      <div className='container'>
+        <TeamCard team1={team1}/>
+        <TeamCard team1={team2}/>
+        <TeamCard team1={team4}/>
+        <TeamCard team1={team3}/>
+      </div>
+      {/* {teams?.length > 0 
+        ? (
+          <div className='container'>
+            {teams.map((team) => (
+              <TeamCard team={team1}/>
+            ))}
+          </div>
+        ) : (
+          <div className='empty'>
+            <h2>No teams found</h2>
+          </div>
+        )
+      } */}
+    </div>
+  );
+}
+
+export default App;
