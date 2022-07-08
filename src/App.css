@@ -369,7 +369,7 @@ h1 {
   .container {
     margin-top: 2rem;
     overflow-x: hidden;
-    width: 95%;
+    width: 100%;
   }
 
   .carousel-outside {
