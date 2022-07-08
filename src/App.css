@@ -371,4 +371,12 @@ h1 {
     overflow-x: hidden;
     width: 95%;
   }
+
+  .carousel-outside {
+    overflow-x: hidden;
+  }
+
+  .carousel-inside {
+    overflow-x: hidden;
+  }
 }
