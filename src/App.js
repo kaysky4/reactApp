@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchIcon from "./images/search.png";
 import TeamCard from "./Components/TeamCard";
