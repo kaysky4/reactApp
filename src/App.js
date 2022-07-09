@@ -37,6 +37,7 @@ const App = () => {
 
       <div className="search">
         <input
+          data-testid="searchFilter"
           placeholder="Search for teams"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -49,8 +50,8 @@ const App = () => {
       </div>
 
       <div className="container">
-        <div className="carousel-outside">
-          <div className="carousel-btn" onClick={slideLeft}>
+        <div id="carouselShell" className="carousel-outside">
+          <div className="carousel-btn" data-testid="leftCarouselBtn" onClick={slideLeft}>
             ❰
           </div>
           <div id="slider" className="carousel-inside">
@@ -67,7 +68,7 @@ const App = () => {
             })}
           </div>
 
-          <div className="carousel-btn" onClick={slideRight}>
+          <div className="carousel-btn" data-testid="rightCarouselBtn" onClick={slideRight}>
             ❱
           </div>
         </div>

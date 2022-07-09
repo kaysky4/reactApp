@@ -14,7 +14,7 @@ const TeamCard = ({ team}) => {
             </div>
 
             <div>
-                <h3>{team.strTeam}</h3>
+                <h3 data-testid="testTeamName">{team.strTeam}</h3>
                 <img className="badge" src={team.strTeamBadge} alt={team.strTeamBadge} width="40%"/>
                 <span> {team.strLeague}<br /></span>
                 <br />
